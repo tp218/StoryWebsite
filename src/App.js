@@ -1,23 +1,34 @@
+import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
+import RenderHomePage from './HomePage.js';
+import RenderReadPage from './ReadPage.js';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+  //Variable to decide whether the current user is reading stories or looking at the main page
+  const [isreading, setisreading] = useState(false);
+
+  //Function to toggle what page the current user is looking at
+  function TogglePage(){
+    if(isreading){
+      setisreading(false);
+    } else {
+      setisreading(true);
+    }
+  }
+
+  return(
+    <div>
+      <div className="header">
+        <button onClick={TogglePage}>
+          button
+        </button>
+      </div>
+      <div>
+        {isreading ? RenderReadPage() : RenderHomePage()}
+      </div>
     </div>
   );
 }
