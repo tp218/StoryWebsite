@@ -23,11 +23,11 @@ function App() {
     <div>
       <div className="header">
         <button onClick={TogglePage}>
-          button
+          {isreading ? "Home" : "Stories"}
         </button>
       </div>
       <div>
-        {isreading ? RenderReadPage() : RenderHomePage()}
+        {isreading ? <RenderReadPage /> : <RenderHomePage />}
       </div>
     </div>
   );
