@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
+const newstories = ["story"];
+
 //function to render the list of new stories
 function RenderNewStories(){
   return(
-    <div>
-      stores happy
+    <div className="story-title">
+      {DisplayStories(newstories)}
     </div>
   );
 }
@@ -17,6 +19,18 @@ function RenderOtherStories(){
   return(
     <div>
       stores Sad
+    </div>
+  );
+}
+
+function DisplayStories(storylist){
+  return(
+    <div>
+      <ul>
+        {storylist.map((story, index) => (
+          <li key={story}>{story}</li>
+        ))}
+      </ul>
     </div>
   );
 }

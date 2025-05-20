@@ -45,6 +45,11 @@
   text-indent: 60px;
 }
 
+.story-title {
+  text-align: center;
+  padding: 1px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
