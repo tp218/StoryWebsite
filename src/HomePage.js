@@ -6,9 +6,15 @@ import './App.css';
 function RenderHomePage(){
     return (
       <div className="App">
+        <div>
+          PHOTO GOES HERE
+        </div>
         <header className="App-header">
-          YOU ARE NOT ON THE HOME PAGE
+          About us
         </header>
+        <p className="paragraph-body">
+          JPStories is a website dedicated to sharing short stories
+        </p>
       </div>
     );
 }

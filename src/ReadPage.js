@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
-
+//function to render the list of new stories
 function RenderNewStories(){
   return(
     <div>
@@ -11,6 +11,8 @@ function RenderNewStories(){
   );
 }
 
+
+//Function to render the stories that are not nee
 function RenderOtherStories(){
   return(
     <div>
@@ -46,9 +48,6 @@ function RenderReadPage(){
 
   return (
     <div className="App">
-      <header className="App-header">
-        YOU ARE ON THE READ PAGE
-      </header>
       <button onClick={toggleNew}>
           New Stories
       </button>

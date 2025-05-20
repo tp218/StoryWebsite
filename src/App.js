@@ -22,6 +22,9 @@ function App() {
   return(
     <div>
       <div className="header">
+        <div className="header-logo">
+          LOGO
+        </div>
         <button onClick={TogglePage}>
           {isreading ? "Home" : "Stories"}
         </button>
