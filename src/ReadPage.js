@@ -2,13 +2,19 @@ import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
-const newstories = ["story"];
+const newstories = {
+  "Steven The Bird": './Stories/Steven The Bird'
+}
+
+
+
+
 
 //function to render the list of new stories
 function RenderNewStories(){
   return(
     <div className="story-title">
-      {DisplayStories(newstories)}
+      STORIES
     </div>
   );
 }
@@ -23,21 +29,35 @@ function RenderOtherStories(){
   );
 }
 
+
+//A function to display a list of stories
 function DisplayStories(storylist){
   return(
     <div>
       <ul>
-        {storylist.map((story, index) => (
-          <li key={story}>{story}</li>
+        {storylist.keys(storylist).map((title) => (
+          <li key={title}>
+            {title}
+            {RenderPDF(storylist[title])}
+          </li>
         ))}
       </ul>
     </div>
   );
 }
 
+//Function to render a pdf on the website |ADD IT TO THE REQUIRED PACKAGES|
+function RenderPDF(pdf){
+  return(
+    <div>
+      <body>
+        <iframe src="./Stories/Steven The Bird" frameborder="0"></iframe>
+      </body>
+    </div>
+  );
+}
+
 function RenderReadPage(){
-
-
   const [lookingAtNew, setlookingAtNew] = useState(false);
   
   //Function to toggle whether the user has expanded the "New Stores" tab
@@ -50,7 +70,7 @@ function RenderReadPage(){
   }
 
   const [lookingAtRest, setlookingAtRest] = useState(false);
-  
+    
   //Function to toggle whether the user has expanded the "Other Stores" tab
   function toggleRest(){
     if(lookingAtRest){
