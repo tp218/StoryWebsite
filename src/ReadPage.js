@@ -14,7 +14,7 @@ const newstories = {
 function RenderNewStories(){
   return(
     <div className="story-title">
-      STORIES
+      {RenderPDF('./Stories/Steven The Bird')}
     </div>
   );
 }
@@ -50,9 +50,7 @@ function DisplayStories(storylist){
 function RenderPDF(pdf){
   return(
     <div>
-      <body>
-        <iframe src="./Stories/Steven The Bird" frameborder="0"></iframe>
-      </body>
+        <iframe src="./Stories/Steven.pdf" frameborder="0"></iframe>
     </div>
   );
 }
