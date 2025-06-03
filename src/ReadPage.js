@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 const newstories = {
-  "Steven The Bird": './Stories/Steven The Bird'
+  "Steven The Bird": './Stories/Steven.pdf'
 }
 
 
@@ -14,7 +14,7 @@ const newstories = {
 function RenderNewStories(){
   return(
     <div className="story-title">
-      {RenderPDF('./Stories/Steven The Bird')}
+      {DisplayStories(newstories)}
     </div>
   );
 }
@@ -35,7 +35,7 @@ function DisplayStories(storylist){
   return(
     <div>
       <ul>
-        {storylist.keys(storylist).map((title) => (
+        {Object.keys(storylist).map((title) => (
           <li key={title}>
             {title}
             {RenderPDF(storylist[title])}
@@ -50,7 +50,7 @@ function DisplayStories(storylist){
 function RenderPDF(pdf){
   return(
     <div>
-        <iframe src="./Stories/Steven.pdf" frameborder="0"></iframe>
+        <iframe src={pdf} frameborder="0"></iframe>
     </div>
   );
 }
