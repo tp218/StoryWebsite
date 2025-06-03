@@ -14,7 +14,15 @@ const newstories = {
 function RenderNewStories(){
   return(
     <div className="story-title">
-      {DisplayStories(newstories)}
+      <div>
+        <ul>
+          {Object.keys(newstories).map((title) => (
+            <li key={title}>
+              {DisplayStory(title)}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
@@ -30,18 +38,26 @@ function RenderOtherStories(){
 }
 
 
-//A function to display a list of stories
-function DisplayStories(storylist){
+//A function to display a story
+function DisplayStory(title){
+
+  const [readingStory, setReading] = useState(false);
+
+  //Function to toggle whether the current story is being read
+  function toggleReading(){
+    if(readingStory){
+      setReading(false);
+    } else {
+      setReading(true);
+    }
+  }
+
   return(
     <div>
-      <ul>
-        {Object.keys(storylist).map((title) => (
-          <li key={title}>
-            {title}
-            {RenderPDF(storylist[title])}
-          </li>
-        ))}
-      </ul>
+      <button onClick={toggleReading}>
+        {title}
+      </button>
+      {readingStory? RenderPDF(newstories[title]) : ""}
     </div>
   );
 }
