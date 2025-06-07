@@ -12,6 +12,9 @@ const newstories = {
 
 //function to render the list of new stories
 function RenderNewStories(){
+
+  const [readingStory, setReading] = useState(false);
+
   return(
     <div className="story-title">
       <div>
