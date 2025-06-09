@@ -21,7 +21,7 @@ function RenderNewStories(){
         <ul>
           {Object.keys(newstories).map((title) => (
             <li key={title}>
-              {DisplayStory(title)}
+              <a href="/stories/read/:title">{title}</a>
             </li>
           ))}
         </ul>

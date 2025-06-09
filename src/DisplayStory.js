@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import logo from './logo.svg';
-import './App.css';
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 
-function DisplayStory(pdf){
+
+
+const Story = () => {
+
+    const { storypath } = useParams();
+
 
     function RenderPDF(pdf){
         return(
@@ -12,9 +15,11 @@ function DisplayStory(pdf){
         );
     }
 
-    return(
+    return (
         <div>
-            
+            {RenderPDF(storypath)}
         </div>
     );
 }
+
+export default Story

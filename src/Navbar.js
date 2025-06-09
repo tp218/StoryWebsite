@@ -8,7 +8,7 @@ const Navbar = () => {
         <nav>
             <div>
                 JP Stories 
-                <a href='/home'>Home </a>
+                <a href='/'>Home </a>
                 <a href="/stories">Read Stories </a>
             </div>
         </nav>

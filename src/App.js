@@ -4,6 +4,7 @@ import './App.css';
 import RenderHomePage from './HomePage.js';
 import RenderReadPage from './ReadPage.js';
 import Navbar from './Navbar.js';
+import Story from './DisplayStory.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
@@ -15,11 +16,14 @@ function App() {
         <Navbar />
         <div>
           <Switch>
-            <Route path="/home">
+            <Route exact path="/">
               <RenderHomePage />
             </Route>
             <Route path="/stories">
               <RenderReadPage />
+            </Route>
+            <Route path="/stories/read/:storypath">
+              <Story />
             </Route>
           </Switch>
         </div>
