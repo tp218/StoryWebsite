@@ -19,7 +19,7 @@ function App() {
             <Route exact path="/">
               <RenderHomePage />
             </Route>
-            <Route path="/stories">
+            <Route exact path="/stories">
               <RenderReadPage />
             </Route>
             <Route path="/stories/read/:storypath">

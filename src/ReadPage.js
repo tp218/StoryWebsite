@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 const newstories = {
-  "Steven The Bird": './Stories/Steven.pdf'
+  "Steven The Bird": "./Stories/Steven.txt"
 }
 
 
@@ -15,13 +15,14 @@ function RenderNewStories(){
 
   const [readingStory, setReading] = useState(false);
 
+
   return(
     <div className="story-title">
       <div>
         <ul>
           {Object.keys(newstories).map((title) => (
             <li key={title}>
-              <a href="/stories/read/:title">{title}</a>
+              <a href={`/stories/read/${newstories[title]}`}>{title}</a>
             </li>
           ))}
         </ul>

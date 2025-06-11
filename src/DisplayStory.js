@@ -10,7 +10,7 @@ const Story = () => {
     function RenderPDF(pdf){
         return(
             <div>
-                <iframe src={pdf} frameborder="0"></iframe>
+                <iframe src={"/Stories/Steven.txt"} frameBorder="0"></iframe>
             </div>
         );
     }
