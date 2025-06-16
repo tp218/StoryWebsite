@@ -1,22 +1,24 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import './App.css';
 
 
 
 const Story = () => {
 
-    const { storypath } = useParams();
+    const { storytitle } = useParams();
+    const storypath = "/Stories/" + storytitle
 
 
     function RenderPDF(pdf){
         return(
             <div>
-                <iframe src={"/Stories/Steven.txt"} frameBorder="0"></iframe>
+                <iframe src={pdf} frameBorder="1000" width={1000} height={500}></iframe>
             </div>
         );
     }
 
     return (
-        <div>
+        <div className="App">
             {RenderPDF(storypath)}
         </div>
     );

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 const newstories = {
-  "Steven The Bird": "./Stories/Steven.txt"
+  "Steven The Bird": "Steven.pdf"
 }
 
 

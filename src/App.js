@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/stories">
               <RenderReadPage />
             </Route>
-            <Route path="/stories/read/:storypath">
+            <Route path="/stories/read/:storytitle">
               <Story />
             </Route>
           </Switch>
