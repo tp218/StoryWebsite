@@ -5,7 +5,9 @@ import RenderHomePage from './HomePage.js';
 import RenderReadPage from './ReadPage.js';
 import Navbar from './Navbar.js';
 import Story from './DisplayStory.js';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Box } from "@mui/material";
+
 
 
 function App() {
@@ -13,7 +15,9 @@ function App() {
   return(
     <Router>
       <div>
-        <Navbar />
+        <Box sx={{position: "fixed"}}>
+          <Navbar />
+        </Box>
         <div>
           <Switch>
             <Route exact path="/">

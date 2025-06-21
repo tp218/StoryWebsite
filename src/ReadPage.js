@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import logo from './logo.svg';
 import './App.css';
+import { Button } from "@mui/material";
 
 const newstories = {
   "Steven The Bird": "Steven.pdf"
@@ -100,15 +101,15 @@ function RenderReadPage(){
 
   return (
     <div className="App">
-      <button onClick={toggleNew}>
+      <Button onClick={toggleNew} sx={{bgcolor: "gray", textEmphasisColor: "green"}}>
           New Stories
-      </button>
+      </Button>
       <div>
         {lookingAtNew? <RenderNewStories />: ""}
       </div>
-      <button onClick={toggleRest}>
+      <Button onClick={toggleRest} sx={{bgcolor: "gray", textEmphasisColor: "green"}}>
           Other Stories
-      </button>
+      </Button>
       <div>
         {lookingAtRest? <RenderOtherStories />: ""}
       </div>
