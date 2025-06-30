@@ -8,13 +8,21 @@
 
 .navbar {
   position: fixed;
-  height:  51px;
+  height:  54px;
   background-color: #356735;
   width: 100%;
+  display: inline-block;
+}
+
+.navbar-element{
+  display: inline-block;
+  align-items: center;
 }
 
 .navbar-text{
   align-items:end;
+  margin-left: 20px;
+  font-size: larger;
 
 }
 
@@ -69,8 +77,9 @@
 }
 
 .photo {
-  height: 50px;
+  height: 54px;
   width: 50px; 
+  vertical-align: middle;
 }
 
 .stock-photo{

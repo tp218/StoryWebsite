@@ -4,6 +4,7 @@ import './App.css';
 import RenderHomePage from './HomePage.js';
 import RenderReadPage from './ReadPage.js';
 import Navbar from './Navbar.js';
+import Footer from './Footer.js';
 import Story from './DisplayStory.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Box } from "@mui/material";
@@ -31,6 +32,9 @@ function App() {
             </Route>
           </Switch>
         </div>
+        <Box>
+          <Footer />
+        </Box>
       </div>
     </Router>
   );
