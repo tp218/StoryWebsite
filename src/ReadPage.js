@@ -7,6 +7,14 @@ const newstories = {
   "Steven The Bird": "Steven.pdf"
 }
 
+const otherstories = {
+  "No stories yet (DO NOT CLICK)" : "ahh"
+}
+
+const allstories = {
+  "Steven The Bird": "Steven.pdf"
+}
+
 
 
 
@@ -14,15 +22,13 @@ const newstories = {
 //function to render the list of new stories
 function RenderNewStories(){
 
-  const [readingStory, setReading] = useState(false);
-
 
   return(
     <div className="story-title">
       <div>
         <ul>
           {Object.keys(newstories).map((title) => (
-            <li key={title}>
+            <li key={title} className="story-list">
               <a href={`/stories/read/${newstories[title]}`}>{title}</a>
             </li>
           ))}
@@ -36,8 +42,16 @@ function RenderNewStories(){
 //Function to render the stories that are not nee
 function RenderOtherStories(){
   return(
-    <div>
-      stores Sad
+    <div className="story-title">
+      <div>
+        <ul>
+          {Object.keys(otherstories).map((title) => (
+            <li key={title} className="story-list">
+              <a href={`/stories/read/${otherstories[title]}`}>{title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
@@ -100,14 +114,14 @@ function RenderReadPage(){
   }
 
   return (
-    <div className="App">
-      <Button onClick={toggleNew} sx={{bgcolor: "gray", textEmphasisColor: "green"}}>
+    <div className="App-read">
+      <Button onClick={toggleNew} sx={{bgcolor: "white", textEmphasisColor: "green", color: "black"}}>
           New Stories
       </Button>
       <div>
         {lookingAtNew? <RenderNewStories />: ""}
       </div>
-      <Button onClick={toggleRest} sx={{bgcolor: "gray", textEmphasisColor: "green"}}>
+      <Button onClick={toggleRest} sx={{bgcolor: "white", textEmphasisColor: "green", marginTop: 2, color: "black"}}>
           Other Stories
       </Button>
       <div>

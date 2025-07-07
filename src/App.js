@@ -32,9 +32,6 @@ function App() {
             </Route>
           </Switch>
         </div>
-        <Box>
-          <Footer />
-        </Box>
       </div>
     </Router>
   );

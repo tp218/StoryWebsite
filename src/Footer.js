@@ -8,12 +8,7 @@ const Footer = () => {
 
     return (
         <div>
-            <header className="App-header">
-                <Typography sx={{paddingLeft: 2, fontWeight: "Bold"}}>
-                    Contact us
-                </Typography>
-            </header>
-            <Box sx={{  px: 5}}>
+            <Box sx={{  px: 5, bgcolor: "#3a7a3a"}}>
                 <p className="paragraph-body">
                 <Typography sx={{ wordWrap: 'break-word' }}>
                     Email: jpstories@gmail.com feedback form

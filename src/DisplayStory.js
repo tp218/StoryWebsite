@@ -18,7 +18,7 @@ const Story = () => {
     }
 
     return (
-        <div className="App">
+        <div className="App-displayStory">
             {RenderPDF(storypath)}
         </div>
     );

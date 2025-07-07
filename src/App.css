@@ -1,17 +1,36 @@
 .App {
   text-align: center;
-  background-color: #184f18;
+  background-color: #3a7a3a;
   height: 100vh;
   width: 100vw;
   padding-top: 3%;
 }
 
+.App-displayStory {
+  text-align: center;
+  background-color: #3a7a3a;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 5%;
+}
+
+.App-read{
+  text-align: center;
+  background-color: #3a7a3a;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 5%;
+  z-index: 0;
+}
+
 .navbar {
-  position: fixed;
+  position: static;
+  padding-right:400%;
   height:  54px;
   background-color: #356735;
   width: 100%;
   display: inline-block;
+  z-index: 3;
 }
 
 .navbar-element{
@@ -85,6 +104,14 @@
 .stock-photo{
   width: 100%;
   height: 200px;
+}
+
+.story-list{
+  list-style-type: none;
+  padding-right: 3.5%;
+  margin: 0%;
+  text-align: center;
+  padding-inline-start: 0;
 }
 
 @keyframes App-logo-spin {
