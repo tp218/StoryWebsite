@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import logo from './assets/jpstories.png'
 import './App.css';
 import { Button } from "@mui/material";
+ import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -10,7 +11,9 @@ const Navbar = () => {
         <nav>
             <div className="navbar">
                 <div className="navbar-element">
-                    <img src={logo} className="photo"/>
+                    <Link to={"/"}>
+                        <img src={logo} className="photo"/>
+                    </Link>
                 </div>
                 <div className="navbar-element">
                     <a className="navbar-text">
