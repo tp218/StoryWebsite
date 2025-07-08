@@ -24,13 +24,13 @@
 }
 
 .navbar {
-  position: static;
+  position: fixed;
   padding-right:400%;
   height:  54px;
   background-color: #356735;
   width: 100%;
   display: inline-block;
-  z-index: 3;
+  z-index: 9999;
 }
 
 .navbar-element{

@@ -16,22 +16,22 @@ function App() {
   return(
     <Router>
       <div>
-        <Box sx={{position: "fixed"}}>
+        <Box>
           <Navbar />
+          <div>
+            <Switch>
+              <Route exact path="/">
+                <RenderHomePage />
+              </Route>
+              <Route exact path="/stories">
+                <RenderReadPage />
+              </Route>
+              <Route path="/stories/read/:storytitle">
+                <Story />
+              </Route>
+            </Switch>
+          </div>
         </Box>
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <RenderHomePage />
-            </Route>
-            <Route exact path="/stories">
-              <RenderReadPage />
-            </Route>
-            <Route path="/stories/read/:storytitle">
-              <Story />
-            </Route>
-          </Switch>
-        </div>
       </div>
     </Router>
   );

@@ -115,13 +115,13 @@ function RenderReadPage(){
 
   return (
     <div className="App-read">
-      <Button onClick={toggleNew} sx={{bgcolor: "white", textEmphasisColor: "green", color: "black"}}>
+      <Button onClick={toggleNew} sx={{bgcolor: "white", textEmphasisColor: "green", color: "black", width: 700, height: 50, zIndex: 0, position: 'relative'}}>
           New Stories
       </Button>
       <div>
         {lookingAtNew? <RenderNewStories />: ""}
       </div>
-      <Button onClick={toggleRest} sx={{bgcolor: "white", textEmphasisColor: "green", marginTop: 2, color: "black"}}>
+      <Button onClick={toggleRest} sx={{bgcolor: "white", textEmphasisColor: "green", marginTop: 2, color: "black", width: 700, height: 50, zIndex: 0, position: 'relative'}}>
           Other Stories
       </Button>
       <div>
