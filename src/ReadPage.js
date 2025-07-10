@@ -11,10 +11,6 @@ const otherstories = {
   "No stories yet (DO NOT CLICK)" : "ahh"
 }
 
-const allstories = {
-  "Steven The Bird": "Steven.pdf"
-}
-
 
 
 
@@ -132,3 +128,4 @@ function RenderReadPage(){
 }
 
 export default RenderReadPage;
+

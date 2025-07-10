@@ -3,8 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import RenderHomePage from './HomePage.js';
 import RenderReadPage from './ReadPage.js';
+import RenderContactPage from './Contact.js';
+import FeedbackForm from './Feedback.js';
 import Navbar from './Navbar.js';
-import Footer from './Footer.js';
 import Story from './DisplayStory.js';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Box } from "@mui/material";
@@ -25,6 +26,12 @@ function App() {
               </Route>
               <Route exact path="/stories">
                 <RenderReadPage />
+              </Route>
+              <Route exact path="/contact">
+                <RenderContactPage />
+              </Route>
+              <Route exact path="/feedback">
+                <FeedbackForm />
               </Route>
               <Route path="/stories/read/:storytitle">
                 <Story />

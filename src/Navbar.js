@@ -22,6 +22,9 @@ const Navbar = () => {
                     <a className="navbar-text">
                         <Button href="/stories" sx={{bgcolor: "#184f18", color: "black"}}>Read Stories</Button>
                     </a>
+                    <a className="navbar-text">
+                        <Button href="/contact" sx={{bgcolor: "#184f18", color: "black"}}>Contact Us</Button>
+                    </a>
                 </div>
             </div>
         </nav>
