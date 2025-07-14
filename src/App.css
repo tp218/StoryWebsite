@@ -32,6 +32,15 @@
   z-index: 0;
 }
 
+.App-feedback{
+  text-align: center;
+  background-color: #3a7a3a;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 5%;
+  z-index: 0;
+}
+
 .navbar {
   position: fixed;
   padding-right:400%;
