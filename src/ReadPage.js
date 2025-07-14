@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 import { Button } from "@mui/material";
@@ -9,6 +9,10 @@ const newstories = {
 
 const otherstories = {
   "No stories yet (DO NOT CLICK)" : "ahh"
+}
+
+const allstories = {
+  "Steven The Bird": "Steven.pdf"
 }
 
 
@@ -109,8 +113,36 @@ function RenderReadPage(){
     }
   }
 
+  const [input, setinput] = useState({
+    searchinput: ''
+  })
+
+  const handleChanges = (e) => {
+    setinput({...input, [e.target.name]:[e.target.value]})
+  }
+
+  function displayStories(){
+    <div className="story-title">
+      <div>
+        <ul>
+          {Object.keys(allstories).map((title) => (
+            <li key={title} className="story-list">
+              
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  }
+
+
   return (
     <div className="App-read">
+      <form className="search-bar" onSubmit={displayStories}>
+        <input type="text" placeholder="Search Stories..." name="searchinput" size="50"
+        onChange={(e) => handleChanges(e)}/>
+        <Button sx={{color: "black", padding: "15"}}> Submit </Button>
+      </form>
       <Button onClick={toggleNew} sx={{bgcolor: "white", textEmphasisColor: "green", color: "black", width: 700, height: 50, zIndex: 0, position: 'relative'}}>
           New Stories
       </Button>
