@@ -113,13 +113,8 @@ function RenderReadPage(){
     }
   }
 
-  const [input, setinput] = useState({
-    searchinput: ''
-  })
+  const [input, setinput] = useState('')
 
-  const handleChanges = (e) => {
-    setinput({...input, [e.target.name]:[e.target.value]})
-  }
 
   function displayStories(){
     <div className="story-title">
@@ -135,13 +130,36 @@ function RenderReadPage(){
     </div>
   }
 
+  const getFilteredItems = (input) => {
+    if(!input){
+      return [];
+    }
+    return Array.from(Object.keys(allstories)).filter(story => story.includes(input));
+  }
 
+
+  if(input){
+    return (
+      <div className="App-read">
+        <form className="search-bar" onSubmit={displayStories}>
+          <input type="text" placeholder="Search Stories..." name="searchinput" size="50"
+          onChange={(e) => setinput(e.target.value)}/>
+        </form>
+        <ul>
+          {getFilteredItems(input).map(title => (
+            <li key={title} className="story-list">
+              <a href={`/stories/read/${allstories[title]}`}>{title}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
   return (
     <div className="App-read">
       <form className="search-bar" onSubmit={displayStories}>
         <input type="text" placeholder="Search Stories..." name="searchinput" size="50"
-        onChange={(e) => handleChanges(e)}/>
-        <Button sx={{color: "black", padding: "15"}}> Submit </Button>
+        onChange={(e) => setinput(e.target.value)}/>
       </form>
       <Button onClick={toggleNew} sx={{bgcolor: "white", textEmphasisColor: "green", color: "black", width: 700, height: 50, zIndex: 0, position: 'relative'}}>
           New Stories
