@@ -14,14 +14,9 @@ function RenderContactPage(){
             </h2>
             <div>
                 thejpstories@gmail.com
-            </div>
-            <h2>
-                Provide Direct Feedback
-            </h2>
-            <div>
-                <a href="/feedback">
-                    Our Feedback Form
-                </a>
+                <br>
+                </br>
+                Please provide any information on what we can do to improve the site!
             </div>
         </div>
     );

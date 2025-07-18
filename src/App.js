@@ -30,9 +30,6 @@ function App() {
               <Route exact path="/contact">
                 <RenderContactPage />
               </Route>
-              <Route exact path="/feedback">
-                <FeedbackForm />
-              </Route>
               <Route path="/stories/read/:storytitle">
                 <Story />
               </Route>
