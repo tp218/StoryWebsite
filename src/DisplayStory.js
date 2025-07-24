@@ -6,8 +6,8 @@ import './App.css';
 const Story = () => {
 
     //Constants That Extract The Story Title From The URL
-    const { STORY_TITLE } = useParams();
-    const STORY_PATH = "/Stories/" + STORY_TITLE
+    const { storytitle } = useParams();
+    const STORY_PATH = "/Stories/" + storytitle
 
     //Function That Renders Each Story
     function RenderPDF(pdf){

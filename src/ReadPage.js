@@ -145,7 +145,7 @@ function RenderReadPage(){
         {lookingAtNew? <RenderNewStories />: ""}
       </div>
 
-      {/* Tab For Viewing The Not New  Stories */}
+      {/* Tab For Viewing The Not New Stories */}
       <Button onClick={toggleRest} sx={{bgcolor: "white", textEmphasisColor: "green", marginTop: 2, color: "black", width: 700, height: 50, zIndex: 0, position: 'relative'}}>
           Other Stories
       </Button>
