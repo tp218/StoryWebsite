@@ -1,4 +1,6 @@
-.App {
+
+ /* General Styling Used Across The Website */
+ .app {
   text-align: center;
   background-color: #3a7a3a;
   height: 100vh;
@@ -6,7 +8,8 @@
   padding-top: 3%;
 }
 
-.App-displayStory {
+/* Styling For The Display Story Page */
+.app-displayStory {
   text-align: center;
   background-color: #3a7a3a;
   height: 100vh;
@@ -14,16 +17,8 @@
   padding-top: 5%;
 }
 
-.App-read{
-  text-align: center;
-  background-color: #3a7a3a;
-  height: 100vh;
-  width: 100vw;
-  padding-top: 5%;
-  z-index: 0;
-}
-
-.App-contact{
+/* Styling For the Read Stories Page */
+.app-read{
   text-align: center;
   background-color: #3a7a3a;
   height: 100vh;
@@ -32,7 +27,8 @@
   z-index: 0;
 }
 
-.App-feedback{
+/* Styling For The "Contact Us" Page */
+.app-contact{
   text-align: center;
   background-color: #3a7a3a;
   height: 100vh;
@@ -41,10 +37,15 @@
   z-index: 0;
 }
 
+
+/* Styling For The Search Bar On The Read Page */
 .search-bar{
-  padding-bottom: 2%;
+  padding-bottom: 3%;
+  padding-top: 2%;
 }
 
+
+/* Styling For The Navigation Bar */
 .navbar {
   position: fixed;
   padding-right:400%;
@@ -55,17 +56,20 @@
   z-index: 9999;
 }
 
+/* Styling For The Individual Elements On The Navbar */
 .navbar-element{
   display: inline-block;
   align-items: center;
 }
 
+/* Styling On The Buttons Of The Navbar */
 .navbar-text{
   align-items:end;
   margin-left: 20px;
   font-size: larger;
 
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -78,62 +82,64 @@
   }
 }
 
-.App-header {
+/* Styling For The Header On The Main Page */
+.app-header {
   min-height: 0vh;
   display: flex;
   justify-content:first baseline;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(15px + 2vmin);
   color: white;
 }
 
-.header {
-  background-color: #093a09;
-  height: 75px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; 
-
-}
-
-
-
-
-.App-link {
-  color: #61dafb;
-}
-
+/* Styling For The "About Us" Paragraph On The Home Page */
 .paragraph-body {
   text-align: left;
   text-indent: 60px;
 }
 
+/* Styling For The Story Titles On The Read Page */
 .story-title {
   text-align: center;
   padding: 1px;
 }
 
-.story-view{
-  width: 90%;
-  
-}
-
+/* Styling For The Image On The Navbar */
 .photo {
   height: 54px;
   width: 50px; 
   vertical-align: middle;
 }
 
+/* Styling For The Stock Photo On The Main Page */
 .stock-photo{
   width: 100%;
   height: 200px;
 }
 
+/* Styling For The List Of Stories On The Read Page */
 .story-list{
   list-style-type: none;
   padding-right: 3.5%;
   margin: 0%;
   text-align: center;
   padding-inline-start: 0;
+}
+
+/* Styling For The Smaller Headers On The Contact Page */
+.contact-subheader{
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* Styling For The Text On The Contact Page */
+.contact-text{
+  padding-bottom: 20px;
+}
+
+/* Styling For The Image On The Bottom Of The Contact Page */
+.contact-photo{
+  size: 10;
+  padding-top: 20px;
 }
 
 @keyframes App-logo-spin {

@@ -5,18 +5,28 @@ import { Typography, Box } from "@mui/material";
 import stock_image from './assets/guy reads.jpg'
 
 
+//Code To Render The Front Page Of The Website
 function RenderHomePage(){
+
     return (
-      <div className="App">
+
+      <div className="app">
+
+        {/* The Stock Image That Displays On The Front Page */}
         <div>
           <img src={stock_image} className="stock-photo"/>
         </div>
+
+
         <Box sx={{  px: 20}}>
-          <header className="App-header">
+
+          <header className="app-header">
             <Typography sx={{paddingLeft: 2, fontWeight: "Bold"}}>
               About us
             </Typography>
           </header>
+
+          {/* The "About Us" Paragraph That Appears On The Front Page */}
           <Box sx={{  px: 5}}>
             <p className="paragraph-body">
               <Typography sx={{ wordWrap: 'break-word' }}>

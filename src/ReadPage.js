@@ -3,15 +3,17 @@ import logo from './logo.svg';
 import './App.css';
 import { Button } from "@mui/material";
 
-const newstories = {
+
+//Lists That Hold The Stories, And Their File Names
+const NEW_STORIES = {
   "Steven The Bird": "Steven.pdf"
 }
 
-const otherstories = {
-  "No stories yet (DO NOT CLICK)" : "ahh"
+const OTHER_STORIES = {
+  "Steven The Bird": "Steven.pdf"
 }
 
-const allstories = {
+const ALL_STORIES = {
   "Steven The Bird": "Steven.pdf"
 }
 
@@ -19,17 +21,19 @@ const allstories = {
 
 
 
-//function to render the list of new stories
+//Function To Render The List Of New Stories
 function RenderNewStories(){
 
 
+  //Takes The List, Then Indexes Each Story By The Title To Create A List Of References That Can Route To The Display Page
+  //Using The Indexes To Route To The PDF Display Page, This Is How Each Render Function Works
   return(
     <div className="story-title">
       <div>
         <ul>
-          {Object.keys(newstories).map((title) => (
+          {Object.keys(NEW_STORIES).map((title) => (
             <li key={title} className="story-list">
-              <a href={`/stories/read/${newstories[title]}`}>{title}</a>
+              <a href={`/stories/read/${NEW_STORIES[title]}`}>{title}</a>
             </li>
           ))}
         </ul>
@@ -39,15 +43,15 @@ function RenderNewStories(){
 }
 
 
-//Function to render the stories that are not nee
+//Function To Render The Stories That Are Not New
 function RenderOtherStories(){
   return(
     <div className="story-title">
       <div>
         <ul>
-          {Object.keys(otherstories).map((title) => (
+          {Object.keys(OTHER_STORIES).map((title) => (
             <li key={title} className="story-list">
-              <a href={`/stories/read/${otherstories[title]}`}>{title}</a>
+              <a href={`/stories/read/${OTHER_STORIES[title]}`}>{title}</a>
             </li>
           ))}
         </ul>
@@ -56,44 +60,13 @@ function RenderOtherStories(){
   );
 }
 
-
-//A function to display a story
-function DisplayStory(title){
-
-  const [readingStory, setReading] = useState(false);
-
-  //Function to toggle whether the current story is being read
-  function toggleReading(){
-    if(readingStory){
-      setReading(false);
-    } else {
-      setReading(true);
-    }
-  }
-
-  return(
-    <div>
-      <button onClick={toggleReading}>
-        {title}
-      </button>
-      {readingStory? RenderPDF(newstories[title]) : ""}
-    </div>
-  );
-}
-
-//Function to render a pdf on the website |ADD IT TO THE REQUIRED PACKAGES|
-function RenderPDF(pdf){
-  return(
-    <div>
-        <iframe src={pdf} frameborder="0"></iframe>
-    </div>
-  );
-}
-
+//Function To Actually Render The Ead Page
 function RenderReadPage(){
+
+  //State Variable That Determines If The User Has Clicked The "New Stories" Tab
   const [lookingAtNew, setlookingAtNew] = useState(false);
   
-  //Function to toggle whether the user has expanded the "New Stores" tab
+  //Function To Toggle Whether The User Has Expanded The "New Stores" Tab
   function toggleNew(){
     if(lookingAtNew){
       setlookingAtNew(false);
@@ -102,9 +75,10 @@ function RenderReadPage(){
     }
   }
 
+  //State Variable That Determines If The User Has Clicked The "Other Stories" Tab
   const [lookingAtRest, setlookingAtRest] = useState(false);
     
-  //Function to toggle whether the user has expanded the "Other Stores" tab
+  //Function To Toggle Whether The User Has Expanded The "Other Stores" Tab
   function toggleRest(){
     if(lookingAtRest){
       setlookingAtRest(false);
@@ -113,60 +87,65 @@ function RenderReadPage(){
     }
   }
 
+  //State Variable To Hold The Data Currently Inside The Search Bar
   const [input, setinput] = useState('')
 
-
-  function displayStories(){
-    <div className="story-title">
-      <div>
-        <ul>
-          {Object.keys(allstories).map((title) => (
-            <li key={title} className="story-list">
-              
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  }
-
-  const getFilteredItems = (input) => {
+  //Function That Gets The Stories That Contain What Is Currently In The Search Bar
+  const getFilteredStories = (input) => {
     if(!input){
       return [];
     }
-    return Array.from(Object.keys(allstories)).filter(story => story.includes(input));
+    return Array.from(Object.keys(ALL_STORIES)).filter(story => story.includes(input));
   }
 
 
+  //If There Is Currently Text In The Search Bar, Only Display The Stories That Contain
+  //The Text In The Search Bar And Nothing Else
   if(input){
+
     return (
-      <div className="App-read">
-        <form className="search-bar" onSubmit={displayStories}>
+
+      <div className="app-read">
+
+        {/* Input Field For The Search Bar */}
+        <form className="search-bar">
           <input type="text" placeholder="Search Stories..." name="searchinput" size="50"
           onChange={(e) => setinput(e.target.value)}/>
         </form>
+
+        {/* Displays The List Of Filtered Stories */}
         <ul>
-          {getFilteredItems(input).map(title => (
+          {getFilteredStories(input).map(title => (
             <li key={title} className="story-list">
-              <a href={`/stories/read/${allstories[title]}`}>{title}</a>
+              <a href={`/stories/read/${ALL_STORIES[title]}`}>{title}</a>
             </li>
           ))}
         </ul>
+
       </div>
     );
   }
+
   return (
-    <div className="App-read">
-      <form className="search-bar" onSubmit={displayStories}>
+
+    <div className="app-read">
+
+      {/* Input Field For The Search Bar */}
+      <form className="search-bar" >
         <input type="text" placeholder="Search Stories..." name="searchinput" size="50"
         onChange={(e) => setinput(e.target.value)}/>
       </form>
+
+      {/* Tab For Viewing The New Stories */}
       <Button onClick={toggleNew} sx={{bgcolor: "white", textEmphasisColor: "green", color: "black", width: 700, height: 50, zIndex: 0, position: 'relative'}}>
           New Stories
       </Button>
+
       <div>
         {lookingAtNew? <RenderNewStories />: ""}
       </div>
+
+      {/* Tab For Viewing The Not New  Stories */}
       <Button onClick={toggleRest} sx={{bgcolor: "white", textEmphasisColor: "green", marginTop: 2, color: "black", width: 700, height: 50, zIndex: 0, position: 'relative'}}>
           Other Stories
       </Button>

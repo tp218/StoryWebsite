@@ -2,13 +2,14 @@ import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import './App.css';
 
 
-
+//Code To Render The Stories 
 const Story = () => {
 
-    const { storytitle } = useParams();
-    const storypath = "/Stories/" + storytitle
+    //Constants That Extract The Story Title From The URL
+    const { STORY_TITLE } = useParams();
+    const STORY_PATH = "/Stories/" + STORY_TITLE
 
-
+    //Function That Renders Each Story
     function RenderPDF(pdf){
         return(
             <div>
@@ -18,8 +19,8 @@ const Story = () => {
     }
 
     return (
-        <div className="App-displayStory">
-            {RenderPDF(storypath)}
+        <div className="app-displayStory">
+            {RenderPDF(STORY_PATH)}
         </div>
     );
 }
