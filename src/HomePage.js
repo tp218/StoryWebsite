@@ -21,7 +21,7 @@ function RenderHomePage(){
         <Box sx={{  px: 20}}>
 
           <header className="app-header">
-            <Typography sx={{paddingLeft: 2, fontWeight: "Bold"}}>
+            <Typography sx={{paddingLeft: 2, fontWeight: "Bold", color: "darkgray"}}>
               About us
             </Typography>
           </header>
