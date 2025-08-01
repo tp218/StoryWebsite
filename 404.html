@@ -1,8 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/" />
+    <meta charset="UTF-8" />
+    <title>Page Not Found</title>
+    <script>
+      // Only redirect if the path does NOT contain a dot (i.e. not a file extension)
+      if (!location.pathname.includes('.')) {
+        // Adjust '/StoryWebsite' to your repo name if needed
+        location.replace('/StoryWebsite' + location.pathname);
+      }
+    </script>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
