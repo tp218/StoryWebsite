@@ -2,12 +2,9 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Page Not Found</title>
     <script>
-      // Only redirect if the path does NOT contain a dot (i.e. not a file extension)
       if (!location.pathname.includes('.')) {
-        // Adjust '/StoryWebsite' to your repo name if needed
-        location.replace('/StoryWebsite' + location.pathname);
+        location.replace('/your-repo-name' + location.pathname);
       }
     </script>
   </head>
