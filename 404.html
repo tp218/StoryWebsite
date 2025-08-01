@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      const pathname = window.location.pathname;
-      const redirectPath = pathname;
-      window.location.replace(redirectPath);
+      if (!location.pathname.includes('.')) {
+        location.replace('/StoryWebsite' + location.pathname);
+      }
     </script>
   </head>
   <body></body>
