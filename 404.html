@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      if (!location.pathname.includes('.')) {
-        location.replace('/your-repo-name' + location.pathname);
-      }
+      const pathname = window.location.pathname;
+      const redirectPath = '/StoryWebsite' + pathname;
+      window.location.replace(redirectPath);
     </script>
   </head>
   <body></body>
