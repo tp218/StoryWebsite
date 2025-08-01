@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <script>
       (function() {
-        const currentPath = window.location.pathname;
         const repoName = '/StoryWebsite';
-
+        const currentPath = window.location.pathname;
         if (!currentPath.startsWith(repoName)) {
           const newUrl = repoName + currentPath + window.location.search + window.location.hash;
           window.location.replace(newUrl);
