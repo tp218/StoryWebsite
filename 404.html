@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <script>
-      location.replace(location.pathname);
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      var segment = window.location.pathname;
+      window.location.replace('/StoryWebsite/?redirect=' + encodeURIComponent(segment + window.location.search + window.location.hash));
     </script>
   </head>
   <body></body>
