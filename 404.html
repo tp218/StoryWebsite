@@ -4,9 +4,14 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
+      var repo = "/StoryWebsite";
 
-        
-      window.location.replace(window.location.pathname);
+      var path = window.location.pathname.replace(repo, "");
+
+      var newUrl = repo + path + window.location.search + window.location.hash;
+
+      // Redirect without encoding slashes
+      window.location.replace(newUrl);
     </script>
   </head>
   <body></body>
