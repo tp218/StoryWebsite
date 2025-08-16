@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
-  <script type="text/javascript">
-    if (!window.location.pathname.startsWith('/StoryWebsite/') && !window.location.search.includes('redirect=')) {
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
       var segment = window.location.pathname;
       window.location.replace('/StoryWebsite/?redirect=' + encodeURIComponent(segment + window.location.search + window.location.hash));
-    }
-  </script>
-</head>
-<body></body>
+    </script>
+  </head>
+  <body></body>
 </html>
