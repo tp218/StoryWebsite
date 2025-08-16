@@ -4,8 +4,10 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
-      var segment = window.location.pathname;
-      window.location.replace('/StoryWebsite/' + window.location.pathname);
+
+      var newUrl = "/StoryWebsite" + window.location.pathname.replace(repo, ""); + window.location.search + window.location.hash;
+
+      window.location.replace(newUrl);
     </script>
   </head>
   <body></body>
