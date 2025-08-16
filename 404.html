@@ -8,7 +8,7 @@
 
       var path = window.location.pathname.replace(repo, "");
 
-      var newUrl = path + window.location.search + window.location.hash;
+      var newUrl = repo + path + window.location.search + window.location.hash;
 
       window.location.replace(newUrl);
     </script>
