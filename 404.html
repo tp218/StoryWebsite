@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script type="text/javascript">
+      var repo = "/StoryWebsite";
+      var path = window.location.pathname.replace(repo, "");
 
-
-      var newUrl = repo + window.location.pathname.replace(repo, ""); + window.location.search + window.location.hash;
-
-      window.location.replace(newUrl);
+      if (!window.location.pathname.includes("index.html")) {
+        var newUrl = repo + "/index.html?redirect=" + encodeURIComponent(path + window.location.search + window.location.hash);
+        window.location.replace(newUrl);
+      }
     </script>
   </head>
   <body></body>
