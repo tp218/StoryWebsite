@@ -5,12 +5,12 @@
     <title>Redirecting...</title>
     <script type="text/javascript">
       var repo = "/StoryWebsite";
+
       var path = window.location.pathname.replace(repo, "");
 
-      if (!window.location.pathname.includes("index.html")) {
-        var newUrl = repo + "/index.html?redirect=" + encodeURIComponent(path + window.location.search + window.location.hash);
-        window.location.replace(newUrl);
-      }
+      var newUrl = repo + path + window.location.search + window.location.hash;
+
+      window.location.replace(newUrl);
     </script>
   </head>
   <body></body>
